@@ -1,8 +1,14 @@
-# React + Vite
+# CPU Performance Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+~ Using React + Vite Frontend
 
-Currently, two official plugins are available:
+# Preview: https://cpu-performance-tracker.pages.dev/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project uses data compiled from https://browser.geekbench.com/processor-benchmarks with Cheerio in a .json file.
+It implements Fuzzy search and keyword filtering to provide the most relevant query, quickly and easily.
+It allows you to save a list of processors with their single-core and multi-core performance scores, and you can add a listed price to each processor, helping you decide which processor gives you the most bang-for-your-buck value on a whim.
+
+todo:
+- improve maintainability of the code
+- fix "ratio" function
+- sort compared list by score instead of "ratio" 
