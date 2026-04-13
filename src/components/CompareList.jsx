@@ -3,8 +3,8 @@ export function CompareList({ list, onRemove, onClear }) {
 
   // Sort by single-core score per unit of price — best value first
   const sorted = [...list].sort((a, b) => {
-    const aRatio = a.singleCore / a.price
-    const bRatio = b.singleCore / b.price
+    const aRatio = a.singleCore 
+    const bRatio = b.singleCore 
     return bRatio - aRatio  // descending
   })
 
@@ -30,7 +30,7 @@ export function CompareList({ list, onRemove, onClear }) {
       </div>
 
       {sorted.map(cpu => {
-        const ratio = (cpu.singleCore / cpu.price).toFixed(2)
+        const ratio = cpu.singleCore
         const isBest = cpu.name === best.name
 
         return (
@@ -50,7 +50,7 @@ export function CompareList({ list, onRemove, onClear }) {
                 position: 'absolute', top: 8, right: 10,
                 fontSize: 10, color: '#4ade80', fontWeight: 700, textTransform: 'uppercase'
               }}>
-                Best Value
+                Best Performance
               </div>
             )}
 
@@ -61,8 +61,8 @@ export function CompareList({ list, onRemove, onClear }) {
             <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#94a3b8' }}>
               <span>Single: <strong style={{ color: '#e2e8f0' }}>{cpu.singleCore}</strong></span>
               <span>Multi: <strong style={{ color: '#e2e8f0' }}>{cpu.multiCore ?? '—'}</strong></span>
-              <span>Price: <strong style={{ color: '#e2e8f0' }}>{cpu.price} EGP</strong></span>
-              <span>Ratio: <strong style={{ color: '#fbbf24' }}>{ratio}</strong></span>
+              <span>Cores: <strong style={{ color: '#fbbf24' }}>{cpu.cores}</strong></span>
+              <span>Price: <strong style={{ color: '#e2e8f0' }}>{cpu.price}</strong></span>
             </div>
 
             <button
